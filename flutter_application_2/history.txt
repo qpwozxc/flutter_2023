@@ -1,0 +1,66 @@
+    1  cd Desktop/projects/mytest/
+    2  git init
+    3  git add -A
+    4  git commit -m 'Initialixe'
+    5  git commit --amend
+    6  git branch -M main
+    7  git remote add origin https://github.com/qpwozxc/2023_project.git
+    8  git push -u origin main
+    9  ls
+   10  cd flutter/
+   11  ls
+   12  cd ..
+   13  ls
+   14  cd Desktop/
+   15  ls
+   16  cd projects/
+   17  ls
+   18  clear
+   19  code mytest/
+   20  flutter --version
+   21  cd projects
+   22  cd
+   23  cd ..
+   24  cd projects
+   25  cd ksj
+   26  cd flutter
+   27  cd
+   28  cd projects
+   29  git status
+   30  cd projects
+   31  cd mytest
+   32  git add
+   33  git add mytest
+   34  cd
+   35  git add mytest
+   36  ls
+   37  cd /c/Users/ksj/Desktop/flutter_proj
+   38  ls
+   39  rm -rf .git
+   40  git rm --cached . -rf
+   41  git add .
+   42  git init
+   43  git add .
+   44  git rm --cached project_00
+   45  git rm --cached -f project_00
+   46  git add .
+   47  git rm --cached project_00
+   48  git rm --cached -f project_00
+   49  git add .
+   50  git rm --cached project_00
+   51  git add .
+   52  git commit -m "aa"
+   53  git push origin main
+   54  git remote add origin 
+   55  git remote set-url origin https://github.com/qpwozxc/flutter_2023.git
+   56  git push origin main
+   57  git push -u origin main
+   58  git add .
+   59  git commit -m "aa"
+   60  git push -u origin main
+   61  ls -l
+   62  ls -al
+   63  cd flutter_application_2
+   64  ls -al
+   65  history
+   66  history >> history.txt
