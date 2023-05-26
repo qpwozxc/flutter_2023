@@ -31,6 +31,10 @@ class MyAppState extends ChangeNotifier {
   void getNext() {
     current = WordPair.random();
     notifyListeners();
+    //listener: 특정 상태를 감시하고, 상태가 변경될 때 실행되는 콜백 함수
+    // ChangeNotifier와 함께 사용
+    // 등록된 리스너에게 변경 사항을 알리기 위해 notifyListeners 메서드를 호출
+    // 주로 상태 변화에 대한 작업을 수행하거나 화면을 업데이트하는 용도로 사용
   }
 
   var favorites = <WordPair>[];
@@ -72,6 +76,10 @@ class _MyHomePageState extends State<MyHomePage> {
         body: Row(
           children: [
             SafeArea(
+              // NavigationRail:전체 네비게이션 레일을 나타내며, 선택한 항목에 따라 활성화된 상태를 가지고 있다.
+
+              // NavigationRailDestination: NavigationRail 내에서 개별 항목을 나타냄.
+              // 항목의 아이콘과 레이블을 포함할 수 있으며, 선택되었을 때 표시되는 스타일을 정의할 수도 있다.
               child: NavigationRail(
                 extended: constraints.maxWidth >= 600,
                 destinations: [
@@ -109,6 +117,10 @@ class GeneratorPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var appState = context.watch<MyAppState>();
+    // watch: 상태 변화를 감지하고 해당 상태를 관찰하는 매커니즘
+    // 주로 StatefulWidget의 build 메서드 내에서 사용
+    // watch 함수는 상태 변화가 발생할 때마다 등록된 콜백 함수를 호출하여 새로운 상태를 전달
+    // 주로 위젯을 업데이트하고 재구성하는 용도로 사용
     var pair = appState.current;
 
     IconData icon;
