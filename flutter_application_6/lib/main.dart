@@ -38,7 +38,7 @@ class TakePictureScreen extends StatefulWidget {
 class TakePictureScreenState extends State<TakePictureScreen> {
   late CameraController _controller;
   late Future<void> _initializeControllerFuture;
-  List<String> capturedImages = []; //찍은 사진들의 리스트 생성
+  List<String> capturedImages = []; //찍은 사진들을 담는 리스트 생성
 
   @override
   void initState() {
@@ -162,6 +162,8 @@ class _CapturedImagesScreenState extends State<CapturedImagesScreen> {
 
   void _deleteImage(String imagePath) {
     showDialog(
+      //showDialog: 다이얼로그를 화면에 나타내고 사용자 입력을 기다리는 동안, 이전 화면과 상호작용을 막는다.
+      //barrierDismissible: false, // 다이얼로그 외부 터치로 닫기 비활성화
       context: context,
       builder: (context) => AlertDialog(
         // AlertDialog: 사용자에게 메시지를 전달하고 선택을 받을 수 있는 위젯
@@ -171,12 +173,13 @@ class _CapturedImagesScreenState extends State<CapturedImagesScreen> {
         actions: [
           // 다이얼로그 하단에 표시되는 액션 ex)"확인","취소"버튼
           TextButton(
+            // 삭제 버튼
             onPressed: () {
               //이미지 지우기
               final file = File(imagePath);
               file.delete();
 
-              // CaptuedImage 리스트에서 해당 사진을 삭제
+              // CapturedImage 리스트에서 해당 사진을 삭제
               setState(() {
                 widget.capturedImages.remove(imagePath);
               });
@@ -186,10 +189,11 @@ class _CapturedImagesScreenState extends State<CapturedImagesScreen> {
             child: Text('Delete'),
           ),
           TextButton(
+            //삭제 취소 버튼
             onPressed: () {
               Navigator.pop(context);
             },
-            child: Text('Cancel'), //삭제 취소 버튼
+            child: Text('Cancel'),
           ),
         ],
       ),
@@ -207,7 +211,7 @@ class DisplayPictureScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Captured Image')),
-      body: Center(child: Image.file(File(imagePath))),
+      body: Center(child: Image.file(File(imagePath))), // 가운데에 정렬
     );
   }
 }
